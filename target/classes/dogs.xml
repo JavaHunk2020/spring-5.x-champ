@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 
+    Dog dog=new Dog();
+		//who is setting attributes ??? programmer
+		dog.setColor("white");
+		dog.setName("Polo");
+		dog.setPrice(133);
+		dog is bean >>>
+		object manage by spring container is called bean!
+     -->    
+    <bean id="pdog" class="com.model.Dog">
+       <property name="name" value="Polo"/>
+       <property name="color" value="white"/>
+       <property name="price" value="903"/>
+       <!-- ref is used to set a bean which is mockMeal inside
+        pdog bean
+        -->
+       <property name="meal" ref="mockMeal"/>
+    </bean>    
+    
+     <bean id="mockMeal" class="com.model.Meal">
+       <property name="rice" value="1Kg"/>
+       <property name="bred" value="10"/>
+       <property name="milk" value="2"/>
+    </bean>   
+
+</beans>
